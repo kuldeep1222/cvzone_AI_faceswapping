@@ -5,7 +5,7 @@ from cvzone.FaceDetectionModule import FaceDetector
 cap = cv2.VideoCapture(0)
 detector = FaceDetector()
 
-print("📸 Press 's' to take the first photo (face1)")
+print(" Press 's' to take the first photo (face1)")
 face1 = None
 face2 = None
 
@@ -17,7 +17,7 @@ while True:
     key = cv2.waitKey(1)
     if key == ord('s'):
         face1 = frame.copy()
-        print("✅ Face 1 captured. Now press 'd' for second photo.")
+        print(" Face 1 captured. Now press 'd' for second photo.")
         break
 
 # Wait for second photo
@@ -29,7 +29,7 @@ while True:
     key = cv2.waitKey(1)
     if key == ord('d'):
         face2 = frame.copy()
-        print("✅ Face 2 captured. Processing...")
+        print(" Face 2 captured. Processing...")
         break
 
 cap.release()
@@ -64,4 +64,4 @@ if bboxs1 and bboxs2:
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 else:
-    print("❌ Face not detected in one or both photos.")
+    print("Face not detected in one or both photos.")
